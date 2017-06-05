@@ -2399,7 +2399,7 @@ $options[]   = array(
 
     array(
       'type'    => 'content',
-      'content' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=56MAQNCNELP8J" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate" /></a>',
+      'content' => '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7PQ35KWFK8G4N&lc=US&item_name=Codestar%20Framework&item_number=CSF1000&currency_code=USD" target="_blank"><img src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate" /></a>',
     ),
 
   )

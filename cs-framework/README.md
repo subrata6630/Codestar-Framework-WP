@@ -98,7 +98,7 @@ themename/cs-framework-override/fields/text/text.php
 ## Donate to the Development
 You Guys! If you want to see more functions and features for this framework, you can buy me a coffee. I need a lot of it when I am creating new stuff for you. Thank you in advance.
 
-[![Donate](https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=56MAQNCNELP8J)
+[![Donate](https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7PQ35KWFK8G4N&lc=US&item_name=Codestar%20Framework&item_number=CSF1000&currency_code=USD)
 
 ## License
 Codestar Framework is **free** to use both personal and commercial. If you used commercial, **please credit**.
