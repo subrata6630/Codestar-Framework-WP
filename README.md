@@ -42,6 +42,8 @@ define( 'CS_ACTIVE_SHORTCODE',  false ); // default true
 define( 'CS_ACTIVE_CUSTOMIZE',  false ); // default true
 ```
 
+or take a look for change define base code from `/cs-framework/cs-framework.php` directly.
+
 ## Enable Light Theme
 Add the following define code somewhere in your theme or plugin, and light theme will be active. 
 
@@ -52,16 +54,11 @@ define( 'CS_ACTIVE_LIGHT_THEME',  true  ); // default false
 ### Light Theme Screenshot
 
 Here is a preview of Light Theme
-[![Codestar Framework Light Theme](https://i.imgur.com/NaHwPdF.png)
+![Codestar Framework Light Theme](https://i.imgur.com/NaHwPdF.png)
 
 and
 
-[![Codestar Framework Light Theme](https://i.imgur.com/AhI6n4q.png)
-
-
-
-
-or take a look for change define base code from `/cs-framework/cs-framework.php` directly.
+![Codestar Framework Light Theme](https://i.imgur.com/AhI6n4q.png)
 
 ## Overriding Files
 You can override an existing file without change `themename/cs-framework` folder. just create one `themename/cs-framework-override` folder on your theme directory. for eg:
