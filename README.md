@@ -41,6 +41,26 @@ define( 'CS_ACTIVE_TAXONOMY',   false ); // default true
 define( 'CS_ACTIVE_SHORTCODE',  false ); // default true
 define( 'CS_ACTIVE_CUSTOMIZE',  false ); // default true
 ```
+
+## Enable Light Theme
+Add the following define code somewhere in your theme or plugin, and light theme will be active. 
+
+```php
+define( 'CS_ACTIVE_LIGHT_THEME',  true  ); // default false
+```
+
+### Light Theme Screenshot
+
+Here is a preview of Light Theme
+[![Codestar Framework Light Theme](https://i.imgur.com/NaHwPdF.png)
+
+and
+
+[![Codestar Framework Light Theme](https://i.imgur.com/AhI6n4q.png)
+
+
+
+
 or take a look for change define base code from `/cs-framework/cs-framework.php` directly.
 
 ## Overriding Files
