@@ -51,7 +51,7 @@ if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) 
     defined( 'CS_ACTIVE_TAXONOMY'    )  or  define( 'CS_ACTIVE_TAXONOMY',     true );
     defined( 'CS_ACTIVE_SHORTCODE'   )  or  define( 'CS_ACTIVE_SHORTCODE',    true );
     defined( 'CS_ACTIVE_CUSTOMIZE'   )  or  define( 'CS_ACTIVE_CUSTOMIZE',    true );
-    defined( 'CS_ACTIVE_LIGHT_THEME' )  or  define( 'CS_ACTIVE_LIGHT_THEME',  true );
+    defined( 'CS_ACTIVE_LIGHT_THEME' )  or  define( 'CS_ACTIVE_LIGHT_THEME',  false );
 
     // helpers
     cs_locate_template( 'functions/deprecated.php'     );
