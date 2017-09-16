@@ -53,7 +53,7 @@ define( 'CS_ACTIVE_LIGHT_THEME',  true  ); // default false
 
 ### Light Theme Screenshot
 
-[![Codestar Framework Screenshot](http://codestarframework.com/assets/images/framework/screenshot-light-1.png)](http://codestarframework.com/assets/images/framework/screenshot-light-1.png)
+[![Codestar Framework Screenshot](http://codestarframework.com/assets/images/framework/screenshot-light.png)](http://codestarframework.com/assets/images/framework/screenshot-light.png)
 
 ## Overriding Files
 You can override an existing file without change `themename/cs-framework` folder. just create one `themename/cs-framework-override` folder on your theme directory. for eg:
