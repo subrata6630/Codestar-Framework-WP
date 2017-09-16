@@ -53,7 +53,6 @@ define( 'CS_ACTIVE_LIGHT_THEME',  true  ); // default false
 
 ### Light Theme Screenshot
 
-Here is a preview of Light Theme
 [![Codestar Framework Screenshot](http://codestarframework.com/assets/images/framework/screenshot-light.png)](http://codestarframework.com/assets/images/framework/screenshot-light.png)
 
 ## Overriding Files
