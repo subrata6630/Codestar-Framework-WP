@@ -50,12 +50,12 @@ class CSFramework_Metabox extends CSFramework_Abstract{
   // add metabox
   public function add_meta_box( $post_type ) {
     foreach ( $this->options as $value ) {
-	    if( "page"==$value['post_type'] && isset($value['page_template'] )){
+	    if( "page"==$value['post_type'] && isset($value['page_template'] ) ) {
 		    if ( isset( $_REQUEST['post'] ) || isset( $_REQUEST['post_ID'] ) ) {
 			    $post_id = empty( $_REQUEST['post_ID'] ) ? $_REQUEST['post'] : $_REQUEST['post_ID']; //very important
 			    $current_page_template = get_post_meta( $post_id, '_wp_page_template', true );
-			    if( is_array($value['page_template']) ){
-				    if( array_search($current_page_template,$value['page_template']) !== false ){
+			    if( is_array( $value['page_template'] ) ){
+				    if( array_search( $current_page_template, $value['page_template'] ) !== false ){
 					    add_meta_box( $value['id'], $value['title'], array( &$this, 'render_meta_box_content' ), $value['post_type'], $value['context'], $value['priority'], $value );
 				    }
 			    } else if( $current_page_template == $value['page_template'] ){
