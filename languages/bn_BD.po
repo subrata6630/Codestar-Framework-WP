@@ -58,8 +58,8 @@ msgid "VALUE"
 msgstr "মান"
 
 #: classes/options.class.php:213
-msgid "You are editing language: ( <strong>%s</strong> )"
-msgstr "আপনি ভাষা সম্পাদনা করছেনঃ  <strong>%s</strong> )"
+msgid "You are editing language: ( %s )"
+msgstr "আপনি ভাষা সম্পাদনা করছেনঃ %s )"
 
 #: classes/shortcode.class.php:82 classes/shortcode.class.php:90
 #: fields/textarea/textarea.php:27
