@@ -46,7 +46,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
       $element->output();
       $output .= ob_get_clean();
     } else {
-      $output .= '<p>'. __( 'This field class is not available!', 'cs-framework' ) .'</p>';
+      $output .= '<p>'. esc_html__( 'This field class is not available!', 'cs-framework' ) .'</p>';
     }
 
     $output .= ( isset( $field['title'] ) ) ? '</div>' : '';
@@ -68,7 +68,7 @@ if ( ! function_exists( 'cs_add_element' ) ) {
  */
 if ( ! function_exists( 'cs_encode_string' ) ) {
   function cs_encode_string( $string ) {
-    return rtrim( strtr( call_user_func( 'base'. '64' .'_encode', addslashes( gzcompress( serialize( $string ), 9 ) ) ), '+/', '-_' ), '=' );
+    return serialize( $string );
   }
 }
 
@@ -82,7 +82,7 @@ if ( ! function_exists( 'cs_encode_string' ) ) {
  */
 if ( ! function_exists( 'cs_decode_string' ) ) {
   function cs_decode_string( $string ) {
-    return unserialize( gzuncompress( stripslashes( call_user_func( 'base'. '64' .'_decode', rtrim( strtr( $string, '-_', '+/' ), '=' ) ) ) ) );
+    return unserialize( $string );
   }
 }
 

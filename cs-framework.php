@@ -10,7 +10,7 @@
  * Plugin URI: http://codestarframework.com/
  * Author: Codestar
  * Author URI: http://codestarlive.com/
- * Version: 1.0.1
+ * Version: 1.0.2
  * Description: A Lightweight and easy-to-use WordPress Options Framework
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -46,12 +46,12 @@ if( ! function_exists( 'cs_framework_init' ) && ! class_exists( 'CSFramework' ) 
   function cs_framework_init() {
 
     // active modules
-    defined( 'CS_ACTIVE_FRAMEWORK'   )  or  define( 'CS_ACTIVE_FRAMEWORK',    true );
-    defined( 'CS_ACTIVE_METABOX'     )  or  define( 'CS_ACTIVE_METABOX',      true );
-    defined( 'CS_ACTIVE_TAXONOMY'    )  or  define( 'CS_ACTIVE_TAXONOMY',     true );
-    defined( 'CS_ACTIVE_SHORTCODE'   )  or  define( 'CS_ACTIVE_SHORTCODE',    true );
-    defined( 'CS_ACTIVE_CUSTOMIZE'   )  or  define( 'CS_ACTIVE_CUSTOMIZE',    true );
-    defined( 'CS_ACTIVE_LIGHT_THEME' )  or  define( 'CS_ACTIVE_LIGHT_THEME',  false );
+    defined( 'CS_ACTIVE_FRAMEWORK' )   or  define( 'CS_ACTIVE_FRAMEWORK',   true  );
+    defined( 'CS_ACTIVE_METABOX'   )   or  define( 'CS_ACTIVE_METABOX',     true  );
+    defined( 'CS_ACTIVE_TAXONOMY'   )  or  define( 'CS_ACTIVE_TAXONOMY',    true  );
+    defined( 'CS_ACTIVE_SHORTCODE' )   or  define( 'CS_ACTIVE_SHORTCODE',   true  );
+    defined( 'CS_ACTIVE_CUSTOMIZE' )   or  define( 'CS_ACTIVE_CUSTOMIZE',   true  );
+    defined( 'CS_ACTIVE_LIGHT_THEME' ) or  define( 'CS_ACTIVE_LIGHT_THEME', false );
 
     // helpers
     cs_locate_template( 'functions/deprecated.php'     );

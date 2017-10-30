@@ -19,7 +19,7 @@ class CSFramework_Option_Image extends CSFramework_Options {
 
     $preview = '';
     $value   = $this->element_value();
-    $add     = ( ! empty( $this->field['add_title'] ) ) ? $this->field['add_title'] : __( 'Add Image', 'cs-framework' );
+    $add     = ( ! empty( $this->field['add_title'] ) ) ? $this->field['add_title'] : esc_html__( 'Add Image', 'cs-framework' );
     $hidden  = ( empty( $value ) ) ? ' hidden' : '';
 
     if( ! empty( $value ) ) {

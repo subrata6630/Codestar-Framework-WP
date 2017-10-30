@@ -172,12 +172,12 @@ class CSFramework extends CSFramework_Abstract {
       if( is_array( $decode_string ) ) {
         return $decode_string;
       }
-      $add_errors[] = $this->add_settings_error( __( 'Success. Imported backup options.', 'cs-framework' ), 'updated' );
+      $add_errors[] = $this->add_settings_error( esc_html__( 'Success. Imported backup options.', 'cs-framework' ), 'updated' );
     }
 
     // reset all options
     if ( isset( $request['resetall'] ) ) {
-      $add_errors[] = $this->add_settings_error( __( 'Default options restored.', 'cs-framework' ), 'updated' );
+      $add_errors[] = $this->add_settings_error( esc_html__( 'Default options restored.', 'cs-framework' ), 'updated' );
       return;
     }
 
@@ -196,7 +196,7 @@ class CSFramework extends CSFramework_Abstract {
           }
         }
       }
-      $add_errors[] = $this->add_settings_error( __( 'Default options restored for only this section.', 'cs-framework' ), 'updated' );
+      $add_errors[] = $this->add_settings_error( esc_html__( 'Default options restored for only this section.', 'cs-framework' ), 'updated' );
     }
 
     // option sanitize and validate
@@ -269,31 +269,12 @@ class CSFramework extends CSFramework_Abstract {
 
     foreach ( $wp_settings_sections[$page] as $section ) {
 
-      if ( $section['callback'] ){
-        call_user_func( $section['callback'], $section );
-      }
-
       if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) ){
         continue;
       }
 
-      $this->do_settings_fields( $page, $section['id'] );
+      do_settings_fields( $page, $section['id'] );
 
-    }
-
-  }
-
-  // settings fields
-  public function do_settings_fields( $page, $section ) {
-
-    global $wp_settings_fields;
-
-    if ( ! isset( $wp_settings_fields[$page][$section] ) ) {
-      return;
-    }
-
-    foreach ( $wp_settings_fields[$page][$section] as $field ) {
-      call_user_func($field['callback'], $field['args']);
     }
 
   }
@@ -303,27 +284,54 @@ class CSFramework extends CSFramework_Abstract {
   }
 
   // adding option page
-  public function admin_menu() {
+    public function admin_menu() {
 
-    $defaults_menu_args = array(
-      'menu_parent'     => '',
-      'menu_title'      => '',
-      'menu_type'       => '',
-      'menu_slug'       => '',
-      'menu_icon'       => '',
-      'menu_capability' => 'manage_options',
-      'menu_position'   => null,
-    );
+      $defaults = array(
+        'menu_parent'     => '',
+        'menu_title'      => '',
+        'menu_type'       => '',
+        'menu_slug'       => '',
+        'menu_icon'       => '',
+        'menu_capability' => 'manage_options',
+        'menu_position'   => null,
+      );
 
-    $args = wp_parse_args( $this->settings, $defaults_menu_args );
+      $args = wp_parse_args( $this->settings, $defaults );
 
-    if( $args['menu_type'] == 'submenu' ) {
-      call_user_func( 'add_'. $args['menu_type'] .'_page', $args['menu_parent'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ) );
-    } else {
-      call_user_func( 'add_'. $args['menu_type'] .'_page', $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+      switch ( $args['menu_type'] ) {
+
+        case 'submenu':
+          add_submenu_page( $args['menu_parent'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ) );
+        break;
+
+        case 'dashboard':
+          add_dashboard_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+        break;
+
+        case 'management':
+          add_management_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+        break;
+
+        case 'plugins':
+          add_plugins_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+        break;
+
+        case 'theme':
+          add_theme_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+        break;
+
+        case 'options':
+          add_options_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+        break;
+
+        default:
+          add_menu_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
+        break;
+
+      }
+
     }
 
-  }
 
   // option page html output
   public function admin_page() {
@@ -362,17 +370,17 @@ class CSFramework extends CSFramework_Abstract {
       echo '<h1>'. $this->settings['framework_title'] .'</h1>';
       echo '<fieldset>';
 
-      echo ( $this->settings['ajax_save'] ) ? '<span id="cs-save-ajax">'. __( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
+      echo ( $this->settings['ajax_save'] ) ? '<span id="cs-save-ajax">'. esc_html__( 'Settings saved.', 'cs-framework' ) .'</span>' : '';
 
-      submit_button( __( 'Save', 'cs-framework' ), 'primary cs-save', 'save', false, array( 'data-save' => __( 'Saving...', 'cs-framework' ) ) );
-      submit_button( __( 'Restore', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
+      submit_button( esc_html__( 'Save', 'cs-framework' ), 'primary cs-save', 'save', false, array( 'data-save' => esc_html__( 'Saving...', 'cs-framework' ) ) );
+      submit_button( esc_html__( 'Restore', 'cs-framework' ), 'secondary cs-restore cs-reset-confirm', $this->unique .'[reset]', false );
 
       if( $this->settings['show_reset_all'] ) {
-        submit_button( __( 'Reset All Options', 'cs-framework' ), 'secondary cs-restore cs-warning-primary cs-reset-confirm', $this->unique .'[resetall]', false );
+        submit_button( esc_html__( 'Reset All Options', 'cs-framework' ), 'secondary cs-restore cs-warning-primary cs-reset-confirm', $this->unique .'[resetall]', false );
       }
 
       echo '</fieldset>';
-      echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. __( 'show all options', 'cs-framework' ) .'</a>' : '';
+      echo ( empty( $has_nav ) ) ? '<a href="#" class="cs-expand-all"><i class="fa fa-eye-slash"></i> '. esc_html__( 'show all options', 'cs-framework' ) .'</a>' : '';
       echo '<div class="clear"></div>';
       echo '</header>'; // end .cs-header
 
