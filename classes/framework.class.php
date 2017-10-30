@@ -124,17 +124,13 @@ class CSFramework extends CSFramework_Abstract {
 
     $defaults = array();
 
-    foreach( $this->sections as $section ) {
+    register_setting( $this->unique, $this->unique, array( &$this,'validate_save' ) );
 
-      register_setting( $this->unique .'_group', $this->unique, array( &$this,'validate_save' ) );
+    foreach( $this->sections as $section ) {
 
       if( isset( $section['fields'] ) ) {
 
-        add_settings_section( $section['name'] .'_section', $section['title'], '', $section['name'] .'_section_group' );
-
         foreach( $section['fields'] as $field_key => $field ) {
-
-          add_settings_field( $field_key .'_field', '', array( &$this, 'field_callback' ), $section['name'] .'_section_group', $section['name'] .'_section', $field );
 
           // set default option if isset
           if( isset( $field['default'] ) ) {
@@ -258,80 +254,44 @@ class CSFramework extends CSFramework_Abstract {
     echo cs_add_element( $field, $value, $this->unique );
   }
 
-  // settings sections
-  public function do_settings_sections( $page ) {
-
-    global $wp_settings_sections, $wp_settings_fields;
-
-    if ( ! isset( $wp_settings_sections[$page] ) ){
-      return;
-    }
-
-    foreach ( $wp_settings_sections[$page] as $section ) {
-
-      if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) ){
-        continue;
-      }
-
-      do_settings_fields( $page, $section['id'] );
-
-    }
-
-  }
-
   public function add_settings_error( $message, $type = 'error', $id = 'global' ) {
     return array( 'setting' => 'cs-errors', 'code' => $id, 'message' => $message, 'type' => $type );
   }
 
   // adding option page
-    public function admin_menu() {
+  public function admin_menu() {
 
-      $defaults = array(
-        'menu_parent'     => '',
-        'menu_title'      => '',
-        'menu_type'       => '',
-        'menu_slug'       => '',
-        'menu_icon'       => '',
-        'menu_capability' => 'manage_options',
-        'menu_position'   => null,
-      );
+    $defaults = array(
+      'menu_type'       => '',
+      'menu_parent'     => '',
+      'menu_title'      => '',
+      'menu_slug'       => '',
+      'menu_capability' => 'manage_options',
+      'menu_icon'       => null,
+      'menu_position'   => null,
+    );
 
-      $args = wp_parse_args( $this->settings, $defaults );
+    $args = wp_parse_args( $this->settings, $defaults );
 
-      switch ( $args['menu_type'] ) {
+    extract( $args );
 
-        case 'submenu':
-          add_submenu_page( $args['menu_parent'], $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ) );
-        break;
-
-        case 'dashboard':
-          add_dashboard_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
-        break;
-
-        case 'management':
-          add_management_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
-        break;
-
-        case 'plugins':
-          add_plugins_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
-        break;
-
-        case 'theme':
-          add_theme_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
-        break;
-
-        case 'options':
-          add_options_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
-        break;
-
-        default:
-          add_menu_page( $args['menu_title'], $args['menu_title'], $args['menu_capability'], $args['menu_slug'], array( &$this, 'admin_page' ), $args['menu_icon'], $args['menu_position'] );
-        break;
-
-      }
-
+    if( $menu_type === 'submenu' ) {
+      add_submenu_page( $menu_parent, $menu_title, $menu_title, $menu_capability, $menu_slug, array( &$this, 'admin_page' ) );
+    } else if( $menu_type === 'management' ) {
+      add_management_page( $menu_title, $menu_title, $menu_capability, $menu_slug, array( &$this, 'admin_page' ), $menu_icon, $menu_position );
+    } else if( $menu_type === 'dashboard' ) {
+      add_dashboard_page( $menu_title, $menu_title, $menu_capability, $menu_slug, array( &$this, 'admin_page' ), $menu_icon, $menu_position );
+    } else if( $menu_type === 'options' ) {
+      add_options_page( $menu_title, $menu_title, $menu_capability, $menu_slug, array( &$this, 'admin_page' ), $menu_icon, $menu_position );
+    } else if( $menu_type === 'plugins' ) {
+      add_plugins_page( $menu_title, $menu_title, $menu_capability, $menu_slug, array( &$this, 'admin_page' ), $menu_icon, $menu_position );
+    } else if( $menu_type === 'theme' ) {
+      add_theme_page( $menu_title, $menu_title, $menu_capability, $menu_slug, array( &$this, 'admin_page' ), $menu_icon, $menu_position );
+    } else {
+      add_menu_page( $menu_title, $menu_title, $menu_capability, $menu_slug, array( &$this, 'admin_page' ), $menu_icon, $menu_position );
     }
 
+  }
 
   // option page html output
   public function admin_page() {
@@ -364,7 +324,7 @@ class CSFramework extends CSFramework_Abstract {
 
       }
 
-      settings_fields( $this->unique. '_group' );
+      settings_fields( $this->unique );
 
       echo '<header class="cs-header">';
       echo '<h1>'. $this->settings['framework_title'] .'</h1>';
@@ -448,7 +408,11 @@ class CSFramework extends CSFramework_Abstract {
               $active_content = ( $section_id == $section['name'] ) ? ' style="display: block;"' : '';
               echo '<div id="cs-tab-'. $section['name'] .'" class="cs-section"'. $active_content .'>';
               echo ( isset( $section['title'] ) && empty( $has_nav ) ) ? '<div class="cs-section-title"><h3>'. $section['title'] .'</h3></div>' : '';
-              $this->do_settings_sections( $section['name'] . '_section_group' );
+
+              foreach( $section['fields'] as $field ) {
+                $this->field_callback( $field );
+              }
+
               echo '</div>';
 
             }
