@@ -162,7 +162,7 @@
            * @version 1.0.0
            *
            */
-          if(condition == "==") {
+          if(condition == "==" || condition == "OR") {
             return this.checkBoolean(val1) == this.checkBoolean(val2);
           } else if(condition == "!=") {
             return this.checkBoolean(val1) != this.checkBoolean(val2);
@@ -393,7 +393,9 @@
 
                 // Evaluate all child rules
                 $(this.rules).each(function() {
+                  if(this.condition !== "OR"){
                     this.applyRule(context, cfg);
+                  }
                 });
 
             } else {
@@ -411,7 +413,11 @@
 
                 // Supress all child rules
                 $(this.rules).each(function() {
+                  if(this.condition !== "OR"){
                     this.applyRule(context, cfg, false);
+                  } else {
+                    this.applyRule(context, cfg);
+                  }
                 });
             }
         }
