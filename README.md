@@ -35,13 +35,12 @@ require_once get_template_directory() .'/cs-framework/cs-framework.php';
 ## Enable - Disable Mods
 Add define code on your `themename/functions.php` directly.
 ```php
-define( 'CS_ACTIVE_FRAMEWORK',  true  ); // default true
-define( 'CS_ACTIVE_METABOX',    false ); // default true
-define( 'CS_ACTIVE_TAXONOMY',   false ); // default true
-define( 'CS_ACTIVE_SHORTCODE',  false ); // default true
-define( 'CS_ACTIVE_CUSTOMIZE',  false ); // default true
+define( 'CS_ACTIVE_FRAMEWORK',   true  ); // default true
+define( 'CS_ACTIVE_METABOX',     false ); // default true
+define( 'CS_ACTIVE_TAXONOMY',    false ); // default true
+define( 'CS_ACTIVE_SHORTCODE',   false ); // default true
+define( 'CS_ACTIVE_CUSTOMIZE',   false ); // default true
 ```
-
 or take a look for change define base code from `/cs-framework/cs-framework.php` directly.
 
 ## Enable Light Theme
