@@ -139,6 +139,7 @@ Thanks for guys! Please read [credits](http://codestarframework.com/credits/). I
 - Improved: Languages packages
 - Removed: call_user_function idea
 - Removed: custom/callback function support for field options
+
 See [changelog](CHANGELOG.md)
 
 ---
