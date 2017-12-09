@@ -128,6 +128,8 @@ Thanks for guys! Please read [credits](http://codestarframework.com/credits/). I
 - Fixed: Color picker appears twice in widgets
 - Fixed: Clear button of color-picker in customizer
 - Fixed: Fieldset default value option
+- Fixed: Overwrite issue for wp core get_locate() function
+- Fixed: Call undefined function wp_get_current_user() issue
 - Fixed: Minor bugs
 - Updated: Chosen jquery plugin v1.6.1
 - Updated: Google Fonts json for Typography field
