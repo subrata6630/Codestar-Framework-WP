@@ -24,7 +24,7 @@ if( ! function_exists( 'cs_get_path_locate' ) ) {
 
     $dirname        = wp_normalize_path( dirname( __FILE__ ) );
     $plugin_dir     = wp_normalize_path( WP_PLUGIN_DIR );
-    $located_plugin = ( preg_match( '#'. sanitize_file_name( $plugin_dir ) .'#', sanitize_file_name( $dirname ) ) ) ? true : false;
+    $located_plugin = ( preg_match( '#'. preg_replace( '/[^A-Za-z]/', '', $plugin_dir ) .'#', preg_replace( '/[^A-Za-z]/', '', $dirname ) ) ) ? true : false;
     $directory      = ( $located_plugin ) ? $plugin_dir : get_template_directory();
     $directory_uri  = ( $located_plugin ) ? WP_PLUGIN_URL : get_template_directory_uri();
     $basename       = str_replace( wp_normalize_path( $directory ), '', $dirname );
