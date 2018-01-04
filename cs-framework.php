@@ -9,7 +9,7 @@
  * Plugin Name: Codestar Framework
  * Plugin URI: http://codestarframework.com/
  * Author: Codestar
- * Author URI: http://codestarlive.com/
+ * Author URI: http://codestarthemes.com/
  * Version: 1.0.2
  * Description: A Lightweight and easy-to-use WordPress Options Framework
  * License: GPLv2 or later
@@ -18,7 +18,7 @@
  *
  * ------------------------------------------------------------------------------------------------
  *
- * Copyright 2015 Codestar <info@codestarlive.com>
+ * Copyright 2015 Codestar <info@codestarthemes.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

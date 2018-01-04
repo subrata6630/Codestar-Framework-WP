@@ -1,4 +1,4 @@
-# Copyright (C) 2017 Codestar
+# Copyright (C) 2018 Codestar
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""

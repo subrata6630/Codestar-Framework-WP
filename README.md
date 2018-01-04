@@ -147,4 +147,4 @@ See [changelog](CHANGELOG.md)
 ---
 
 ##### Using Codestar Framework Themes
-[![Route Responsive Multi-Purpose WordPress Theme](http://s3.codestarlive.com/route/userbox/route-preview-promo.png)](http://themeforest.net/item/route-responsive-multipurpose-wordpress-theme/8815770?ref=Codestar)
+[![Route Responsive Multi-Purpose WordPress Theme](http://s3.codestarthemes.com/route/userbox/route-preview-promo.png)](http://themeforest.net/item/route-responsive-multipurpose-wordpress-theme/8815770?ref=Codestar)

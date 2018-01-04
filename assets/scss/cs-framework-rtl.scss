@@ -5,8 +5,6 @@
  * Codestar Framework
  * A Lightweight and easy-to-use WordPress Options Framework
  *
- * Copyright 2015 Codestar <info@codestarlive.com>
- *
  * -----------------------------------------------------------
  *
  */
