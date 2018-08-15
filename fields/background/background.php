@@ -31,9 +31,9 @@ class CSFramework_Option_background extends CSFramework_Options {
     if( isset( $this->field['settings'] ) ) { extract( $this->field['settings'] ); }
 
     $upload_type  = ( isset( $upload_type  ) ) ? $upload_type  : 'image';
-    $button_title = ( isset( $button_title ) ) ? $button_title : __( 'Upload', 'cs-framework' );
-    $frame_title  = ( isset( $frame_title  ) ) ? $frame_title  : __( 'Upload', 'cs-framework' );
-    $insert_title = ( isset( $insert_title ) ) ? $insert_title : __( 'Use Image', 'cs-framework' );
+    $button_title = ( isset( $button_title ) ) ? $button_title : esc_html__( 'Upload', 'cs-framework' );
+    $frame_title  = ( isset( $frame_title  ) ) ? $frame_title  : esc_html__( 'Upload', 'cs-framework' );
+    $insert_title = ( isset( $insert_title ) ) ? $insert_title : esc_html__( 'Use Image', 'cs-framework' );
 
     echo '<div class="cs-field-upload">';
     echo '<input type="text" name="'. $this->element_name( '[image]' ) .'" value="'. $this->value['image'] .'"'. $this->element_class() . $this->element_attributes() .'/>';

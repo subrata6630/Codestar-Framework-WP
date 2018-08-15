@@ -68,8 +68,8 @@ msgid "ID"
 msgstr "ID"
 
 #: classes/options.class.php:227
-msgid "You are editing language: ( <strong>%s</strong> )"
-msgstr "您正在编辑的语言: ( <strong>%s</strong> )"
+msgid "You are editing language: ( %s )"
+msgstr "您正在编辑的语言: ( %s )"
 
 #: classes/shortcode.class.php:82 classes/shortcode.class.php:90
 #: fields/textarea/textarea.php:27

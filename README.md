@@ -35,13 +35,12 @@ require_once get_template_directory() .'/cs-framework/cs-framework.php';
 ## Enable - Disable Mods
 Add define code on your `themename/functions.php` directly.
 ```php
-define( 'CS_ACTIVE_FRAMEWORK',  true  ); // default true
-define( 'CS_ACTIVE_METABOX',    false ); // default true
-define( 'CS_ACTIVE_TAXONOMY',   false ); // default true
-define( 'CS_ACTIVE_SHORTCODE',  false ); // default true
-define( 'CS_ACTIVE_CUSTOMIZE',  false ); // default true
+define( 'CS_ACTIVE_FRAMEWORK',   true  ); // default true
+define( 'CS_ACTIVE_METABOX',     false ); // default true
+define( 'CS_ACTIVE_TAXONOMY',    false ); // default true
+define( 'CS_ACTIVE_SHORTCODE',   false ); // default true
+define( 'CS_ACTIVE_CUSTOMIZE',   false ); // default true
 ```
-
 or take a look for change define base code from `/cs-framework/cs-framework.php` directly.
 
 ## Enable Light Theme
@@ -107,11 +106,6 @@ themename/cs-framework-override/fields/text/text.php
 - Notice
 - and **extendable** fields
 
-## Donate to the Development
-You Guys! If you want to see more functions and features for this framework, you can buy me a coffee. I need a lot of it when I am creating new stuff for you. Thank you in advance.
-
-[![Donate](https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=7PQ35KWFK8G4N&lc=US&item_name=Codestar%20Framework&item_number=CSF1000&currency_code=USD)
-
 ## License
 Codestar Framework is **free** to use both personal and commercial. If you used commercial, **please credit**.
 Read more about GNU [license.txt](http://www.gnu.org/licenses/gpl-2.0.txt)
@@ -120,28 +114,37 @@ Read more about GNU [license.txt](http://www.gnu.org/licenses/gpl-2.0.txt)
 Thanks for guys! Please read [credits](http://codestarframework.com/credits/). If you would like to contribute please fork the project and [report bugs](https://github.com/Codestar/codestar-framework/issues) or submit [pull requests](https://github.com/Codestar/codestar-framework/pulls)</a>.
 
 ## The Latest Updates
-#### 1.0.1
-- Added: Taxonomy options framework
-- Added: Taxonomy css styles and rtl support
-- Added: Framework title option in framework config file
-- Added: Show/Hide option for `Reset All Options` button in framework config file
-- Added: Helper function for get $_POST/$_GET variables
-- Added: Metaboxes array support for post_type. see [#99](https://github.com/Codestar/codestar-framework/issues/99)
-- Added: Fieldset new feature `un_array` option for children element getting by unique id. see [#235](https://github.com/Codestar/codestar-framework/issues/235)
-- Added: An action `cs_validate_save` for save framework options fields
-- Added: Background size option for background field
-- Added: Debug light option for showing element id
-- Added: Fallback file for avoid missing core functions
-- Fixed: Background field custom titles (button, dialog etc) issue
-- Updated: Framework documentation for taxonomy framework and fields
-- Updated: Font Awesome 4.5.0 icons package
-- Changed: Menu type names in framework config file. for eg. from `add_menu_page` to `menu`
-- Improved: Theme Check plugin compatibility
-- Improved: Dependency script for multiple checkboxes values
+#### 1.0.2
+- Added: Support for WP Nav Menus select
+- Added: Taxonomy framework clear form elements after saving
+- Added: A filter for external icon-jsons load
+- Added: An action `cs_customize_options_config` for customize config options
+- Added: Auto Class name for all fields and generating classname by field title
+- Added: Chinese language po/mo
+- Added: Post type list support
+- Added: Typenow param for specific metabox options
+- Added: Light theme for framework
+- Changed: Action from `cs_validate_save` to `cs_validate_save_after` for save after framework options
+- Fixed: Color picker appears twice in widgets
+- Fixed: Clear button of color-picker in customizer
+- Fixed: Fieldset default value option
+- Fixed: Overwrite issue for wp core get_locate() function
+- Fixed: Call undefined function wp_get_current_user() issue
+- Fixed: Minor bugs
+- Updated: Chosen jquery plugin v1.6.1
+- Updated: Google Fonts json for Typography field
+- Updated: Font Awesome 4.7.0 icons package
+- Updated: textdomain updates from __() to esc_html_e() - esc_html__()
+- Updated: Backup field idea, changed from base64 encode/decode to seraize/unserialize
+- Improved: Icons select field for avoid conflict
+- Improved: Locate path function for windows servers
+- Improved: Languages packages
+- Removed: call_user_function idea
+- Removed: custom/callback function support for field options
 
 See [changelog](CHANGELOG.md)
 
 ---
 
 ##### Using Codestar Framework Themes
-[![Route Responsive Multi-Purpose WordPress Theme](http://s3.codestarlive.com/route/userbox/route-preview-promo.png)](http://themeforest.net/item/route-responsive-multipurpose-wordpress-theme/8815770?ref=Codestar)
+[![Route Responsive Multi-Purpose WordPress Theme](http://s3.codestarthemes.com/route/userbox/route-preview-promo.png)](http://themeforest.net/item/route-responsive-multipurpose-wordpress-theme/8815770?ref=Codestar)

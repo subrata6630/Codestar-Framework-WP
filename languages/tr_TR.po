@@ -53,8 +53,8 @@ msgid "VALUE"
 msgstr "ÇIKTI"
 
 #: classes/options.class.php:211
-msgid "You are editing language: ( <strong>%s</strong> )"
-msgstr "Şu anda düzenlenen dil: ( <strong>%s</strong> )"
+msgid "You are editing language: ( %s )"
+msgstr "Şu anda düzenlenen dil: ( %s )"
 
 #: classes/shortcode.class.php:82 classes/shortcode.class.php:90
 #: fields/textarea/textarea.php:27

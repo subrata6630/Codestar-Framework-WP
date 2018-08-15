@@ -60,8 +60,8 @@ msgid "VALUE"
 msgstr "ارزش"
 
 #: classes/options.class.php:211
-msgid "You are editing language: ( <strong>%s</strong> )"
-msgstr "شما در حال ویرایش زبان:  ( <strong>%s</strong> )"
+msgid "You are editing language: ( %s )"
+msgstr "شما در حال ویرایش زبان:  ( %s )"
 
 #: classes/shortcode.class.php:82 classes/shortcode.class.php:90
 #: fields/textarea/textarea.php:27
