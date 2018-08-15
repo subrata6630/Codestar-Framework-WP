@@ -18,7 +18,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         $fields      = array_values( $this->field['fields'] );
         $last_id     = ( is_array( $this->value ) ) ? max( array_keys( $this->value ) ) : 0;
@@ -89,7 +89,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
         echo '<a href="#" class="button button-primary cs-add-group">' . $this->field['button_title'] . '</a>';
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

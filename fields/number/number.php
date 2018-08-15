@@ -18,10 +18,10 @@ class CSFramework_Option_number extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
         $unit = ( isset( $this->field['unit'] ) ) ? '<em>' . $this->field['unit'] . '</em>' : '';
-        echo '<input type="number" name="' . esc_attr($this->element_name()) . '" value="' . $this->element_value() . '"' . $this->element_class() . $this->element_attributes() . '/>' . $unit;
-        echo wp_kses_post($this->element_after());
+        echo '<input type="number" name="' . esc_attr( $this->element_name() ) . '" value="' . $this->element_value() . '"' . $this->element_class() . $this->element_attributes() . '/>' . $unit;
+        echo wp_kses_post( $this->element_after() );
 
     }
 

@@ -18,7 +18,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         $defaults_value = array(
             'family'  => 'Arial',
@@ -111,7 +111,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
 
         }
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

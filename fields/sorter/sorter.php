@@ -18,7 +18,7 @@ class CSFramework_Option_Sorter extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         $value          = $this->element_value();
         $value          = ( ! empty( $value ) ) ? $value : $this->field['default'];
@@ -50,7 +50,7 @@ class CSFramework_Option_Sorter extends CSFramework_Options {
         echo '</div>';
         echo '<div class="clear"></div>';
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

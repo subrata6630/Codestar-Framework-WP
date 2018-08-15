@@ -18,9 +18,9 @@ class CSFramework_Option_backup extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
-        echo '<textarea name="' . esc_attr($this->unique) . '[import]"' . $this->element_class() . $this->element_attributes() . '></textarea>';
+        echo '<textarea name="' . esc_attr( $this->unique ) . '[import]"' . $this->element_class() . $this->element_attributes() . '></textarea>';
         submit_button( esc_html__( 'Import a Backup', 'cs-framework' ), 'primary cs-import-backup', 'backup', false );
         echo '<small>( ' . esc_html__( 'copy-paste your backup string here', 'cs-framework' ) . ' )</small>';
 
@@ -32,7 +32,7 @@ class CSFramework_Option_backup extends CSFramework_Options {
         submit_button( esc_html__( 'Reset All Options', 'cs-framework' ), 'cs-warning-primary cs-reset-confirm', $this->unique . '[resetall]', false );
         echo '<small class="cs-text-warning">' . esc_html__( 'Please be sure for reset all of framework options.', 'cs-framework' ) . '</small>';
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

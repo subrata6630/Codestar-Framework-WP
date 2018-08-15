@@ -18,7 +18,7 @@ class CSFramework_Option_select extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         if ( isset( $this->field['options'] ) ) {
 
@@ -42,7 +42,7 @@ class CSFramework_Option_select extends CSFramework_Options {
 
         }
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

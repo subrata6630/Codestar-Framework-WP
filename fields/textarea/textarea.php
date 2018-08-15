@@ -18,10 +18,10 @@ class CSFramework_Option_textarea extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
-        echo wp_kses_post($this->shortcode_generator());
-        echo '<textarea name="' . esc_attr($this->element_name()) . '"' . $this->element_class() . $this->element_attributes() . '>' . $this->element_value() . '</textarea>';
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_before() );
+        echo wp_kses_post( $this->shortcode_generator() );
+        echo '<textarea name="' . esc_attr( $this->element_name() ) . '"' . $this->element_class() . $this->element_attributes() . '>' . $this->element_value() . '</textarea>';
+        echo wp_kses_post( $this->element_after() );
 
     }
 

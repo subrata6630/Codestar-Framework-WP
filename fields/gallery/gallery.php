@@ -18,7 +18,7 @@ class CSFramework_Option_Gallery extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         $value  = $this->element_value();
         $add    = ( ! empty( $this->field['add_title'] ) ) ? $this->field['add_title'] : esc_html__( 'Add Gallery', 'cs-framework' );
@@ -43,9 +43,9 @@ class CSFramework_Option_Gallery extends CSFramework_Options {
         echo '<a href="#" class="button button-primary cs-add">' . $add . '</a>';
         echo '<a href="#" class="button cs-edit' . $hidden . '">' . $edit . '</a>';
         echo '<a href="#" class="button cs-warning-primary cs-remove' . $hidden . '">' . $clear . '</a>';
-        echo '<input type="text" name="' . esc_attr($this->element_name()) . '" value="' . $value . '"' . $this->element_class() . $this->element_attributes() . '/>';
+        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . $value . '"' . $this->element_class() . $this->element_attributes() . '/>';
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

@@ -18,9 +18,9 @@ class CSFramework_Option_subheading extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
-        echo wp_kses_post($this->field['content']);
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_before() );
+        echo wp_kses_post( $this->field['content'] );
+        echo wp_kses_post( $this->element_after() );
 
     }
 

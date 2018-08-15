@@ -18,7 +18,7 @@ class CSFramework_Option_Wysiwyg extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         $defaults = array(
             'textarea_rows' => 10,
@@ -33,7 +33,7 @@ class CSFramework_Option_Wysiwyg extends CSFramework_Options {
 
         wp_editor( $field_value, $field_id, $settings );
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

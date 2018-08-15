@@ -18,7 +18,7 @@ class CSFramework_Option_fieldset extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         echo '<div class="cs-inner">';
 
@@ -39,7 +39,7 @@ class CSFramework_Option_fieldset extends CSFramework_Options {
 
         echo '</div>';
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

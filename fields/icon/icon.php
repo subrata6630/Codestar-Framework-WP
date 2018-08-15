@@ -18,7 +18,7 @@ class CSFramework_Option_icon extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
 
         $value  = $this->element_value();
         $hidden = ( empty( $value ) ) ? ' hidden' : '';
@@ -27,10 +27,10 @@ class CSFramework_Option_icon extends CSFramework_Options {
         echo '<span class="cs-icon-preview' . $hidden . '"><i class="' . $value . '"></i></span>';
         echo '<a href="#" class="button button-primary cs-icon-add">' . esc_html__( 'Add Icon', 'cs-framework' ) . '</a>';
         echo '<a href="#" class="button cs-warning-primary cs-icon-remove' . $hidden . '">' . esc_html__( 'Remove Icon', 'cs-framework' ) . '</a>';
-        echo '<input type="text" name="' . esc_attr($this->element_name()) . '" value="' . $value . '"' . $this->element_class( 'cs-icon-value' ) . $this->element_attributes() . ' />';
+        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . $value . '"' . $this->element_class( 'cs-icon-value' ) . $this->element_attributes() . ' />';
         echo '</div>';
 
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

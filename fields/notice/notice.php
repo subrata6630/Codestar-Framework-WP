@@ -18,9 +18,9 @@ class CSFramework_Option_notice extends CSFramework_Options {
 
     public function output() {
 
-        echo wp_kses_post($this->element_before());
+        echo wp_kses_post( $this->element_before() );
         echo '<div class="cs-notice cs-' . $this->field['class'] . '">' . $this->field['content'] . '</div>';
-        echo wp_kses_post($this->element_after());
+        echo wp_kses_post( $this->element_after() );
 
     }
 

@@ -25,16 +25,16 @@ if ( ! function_exists( 'cs_add_element' ) ) {
 
         if ( isset( $field['dependency'] ) ) {
             $hidden = ' hidden';
-            $depend .= ' data-' . $sub . 'controller="' . esc_attr($field['dependency'][0]) . '"';
-            $depend .= ' data-' . $sub . 'condition="' . esc_attr($field['dependency'][1]) . '"';
-            $depend .= ' data-' . $sub . 'value="' . esc_attr($field['dependency'][2]) . '"';
+            $depend .= ' data-' . $sub . 'controller="' . esc_attr( $field['dependency'][0] ) . '"';
+            $depend .= ' data-' . $sub . 'condition="' . esc_attr( $field['dependency'][1] ) . '"';
+            $depend .= ' data-' . $sub . 'value="' . esc_attr( $field['dependency'][2] ) . '"';
         }
 
-        $output .= '<div class="cs-element cs-element-' . esc_attr($el_class) . ' cs-field-' . esc_attr($field['type']) . $is_pseudo . $wrap_class . $hidden . '"' . $depend . '>';
+        $output .= '<div class="cs-element cs-element-' . esc_attr( $el_class ) . ' cs-field-' . esc_attr( $field['type'] ) . $is_pseudo . $wrap_class . $hidden . '"' . $depend . '>';
 
         if ( isset( $field['title'] ) ) {
-            $field_desc = ( isset( $field['desc'] ) ) ? '<p class="cs-text-desc">' . wp_kses_post($field['desc']) . '</p>' : '';
-            $output     .= '<div class="cs-title"><h4>' . wp_kses_post($field['title']) . '</h4>' . wp_kses_post($field_desc) . '</div>';
+            $field_desc = ( isset( $field['desc'] ) ) ? '<p class="cs-text-desc">' . wp_kses_post( $field['desc'] ) . '</p>' : '';
+            $output     .= '<div class="cs-title"><h4>' . wp_kses_post( $field['title'] ) . '</h4>' . wp_kses_post( $field_desc ) . '</div>';
         }
 
         $output .= ( isset( $field['title'] ) ) ? '<div class="cs-fieldset">' : '';

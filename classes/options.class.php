@@ -47,7 +47,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
 
         }
 
-        return wp_kses_post($value);
+        return wp_kses_post( $value );
 
     }
 
@@ -70,8 +70,9 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
 
         $field_class = ( isset( $this->field['class'] ) ) ? ' ' . $this->field['class'] : '';
 
-        $classes =  ( $field_class || $el_class ) ? ' class="' . $el_class . $field_class . '"' : '';
-        return esc_attr($classes);
+        $classes = ( $field_class || $el_class ) ? ' class="' . $el_class . $field_class . '"' : '';
+
+        return esc_attr( $classes );
     }
 
     public function element_attributes( $el_attributes = array() ) {
@@ -99,7 +100,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
             }
         }
 
-        return esc_attr($atts);
+        return esc_attr( $atts );
 
     }
 
