@@ -1,4 +1,7 @@
-<?php if ( ! defined( 'ABSPATH' ) ) { die; } // Cannot access pages directly.
+<?php if ( ! defined( 'ABSPATH' ) ) {
+    die;
+} // Cannot access pages directly.
+
 /**
  *
  * Field: Notice
@@ -9,16 +12,16 @@
  */
 class CSFramework_Option_notice extends CSFramework_Options {
 
-  public function __construct( $field, $value = '', $unique = '' ) {
-    parent::__construct( $field, $value, $unique );
-  }
+    public function __construct( $field, $value = '', $unique = '' ) {
+        parent::__construct( $field, $value, $unique );
+    }
 
-  public function output() {
+    public function output() {
 
-    echo $this->element_before();
-    echo '<div class="cs-notice cs-'. $this->field['class'] .'">'. $this->field['content'] .'</div>';
-    echo $this->element_after();
+        echo wp_kses_post($this->element_before());
+        echo '<div class="cs-notice cs-' . $this->field['class'] . '">' . $this->field['content'] . '</div>';
+        echo wp_kses_post($this->element_after());
 
-  }
+    }
 
 }

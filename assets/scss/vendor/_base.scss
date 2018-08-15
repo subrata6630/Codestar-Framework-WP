@@ -1,25 +1,25 @@
-.cs-framework{
+.cs-framework {
   position: relative;
   margin-top: 20px;
   margin-right: 20px;
 
-  label{
+  label {
     padding: 0;
     margin: 0;
     display: inline-block;
   }
 
-  .cs-settings-error{
+  .cs-settings-error {
     margin: 0 0 15px 0;
   }
 
-  .cs-header{
+  .cs-header {
     position: relative;
     background-color: #050505;
     padding: 25px;
     @include border-radius(2px 2px 0 0);
 
-    h1{
+    h1 {
       color: #fff;
       float: left;
       font-size: 1.5em;
@@ -27,44 +27,44 @@
       font-weight: 400;
       margin: 0;
 
-      small{
+      small {
         font-size: 11px;
         color: #555;
         font-weight: 500;
       }
     }
 
-    fieldset{
+    fieldset {
       float: right;
 
-      input{
+      input {
         margin: 0 2px;
         line-height: 26px;
       }
     }
   }
 
-  .cs-body{
+  .cs-body {
     position: relative;
     background-color: #fff;
   }
 
-  .cs-nav{
+  .cs-nav {
     display: block;
     position: relative;
     z-index: 10;
     float: left;
     width: 225px;
 
-    ul{
+    ul {
       clear: left;
       margin: 0;
       list-style-type: none;
 
-      li{
+      li {
         margin-bottom: 0;
 
-        a{
+        a {
           font-size: 13px;
           position: relative;
           display: block;
@@ -75,21 +75,21 @@
           border-bottom: 1px solid #2f2f2f;
           @include transition(all 0.2s ease-out);
 
-          &:hover{
+          &:hover {
             color: #fff;
           }
 
-          &:focus{
+          &:focus {
             outline: none;
             @include box-shadow(none);
           }
         }
 
-        .cs-section-active{
+        .cs-section-active {
           color: #fff;
           background-color: #111;
 
-          &:after{
+          &:after {
             content: " ";
             position: absolute;
             right: 0;
@@ -104,7 +104,7 @@
           }
         }
 
-        .cs-arrow:after{
+        .cs-arrow:after {
           content: "\f054";
           display: inline-block;
           font-family: "FontAwesome";
@@ -118,36 +118,36 @@
           @include transition(transform 0.2s);
         }
 
-        &.cs-tab-active .cs-arrow:after{
-          @include transform( rotate(90deg) );
+        &.cs-tab-active .cs-arrow:after {
+          @include transform(rotate(90deg));
         }
       }
 
-      ul{
+      ul {
         display: none;
         position: relative;
         border-bottom: 1px solid #2f2f2f;
         position: relative;
 
-        li{
+        li {
 
-          a{
+          a {
             font-size: 12px;
             padding: 13px 15px 13px 25px;
             background-color: #191919;
             border-bottom: 1px solid #222;
           }
 
-          .cs-section-active{
+          .cs-section-active {
             background-color: #101010;
           }
 
-          &:last-child a{
+          &:last-child a {
             border-bottom: 0;
           }
         }
 
-        &:before{
+        &:before {
           content: '';
           position: absolute;
           top: 0;
@@ -160,14 +160,14 @@
       }
     }
 
-    .cs-icon{
+    .cs-icon {
       width: 20px;
       margin-right: 5px;
       font-size: 14px;
       text-align: center;
     }
 
-    .cs-seperator{
+    .cs-seperator {
       color: #fff;
       font-weight: 600;
       text-transform: uppercase;
@@ -176,7 +176,7 @@
     }
   }
 
-  .cs-nav-background{
+  .cs-nav-background {
     position: absolute;
     top: 0;
     left: 0;
@@ -186,21 +186,21 @@
     background-color: #222;
   }
 
-  .cs-content{
+  .cs-content {
     position: relative;
     margin-left: 225px;
 
-    .cs-sections{
+    .cs-sections {
       float: left;
       width: 100%;
     }
 
-    .cs-section-title{
+    .cs-section-title {
       display: none;
       padding: 20px 30px;
       background-color: #5bc0de;
 
-      h3{
+      h3 {
         color: #fff;
         margin: 0;
         padding: 0 !important;
@@ -210,13 +210,13 @@
       }
     }
 
-    .cs-section{
-      display:none;
+    .cs-section {
+      display: none;
     }
 
   }
 
-  .cs-footer{
+  .cs-footer {
     padding: 20px;
     color: #555;
     text-align: right;
@@ -225,23 +225,23 @@
     @include border-radius(0 0 2px 2px);
   }
 
-  .cs-show-all{
+  .cs-show-all {
     .cs-nav-background,
-    .cs-nav{
+    .cs-nav {
       display: none;
     }
 
-    .cs-content{
+    .cs-content {
       margin-left: 0;
     }
 
     .cs-section-title,
-    .cs-section{
+    .cs-section {
       display: block !important;
     }
   }
 
-  .cs-expand-all{
+  .cs-expand-all {
     position: absolute;
     right: 40px;
     bottom: 5px;
@@ -251,68 +251,68 @@
     font-weight: 500;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
       color: #fff;
     }
 
-    &:focus{
+    &:focus {
       @include box-shadow(none);
     }
   }
 }
 
-.cs-metabox-framework{
+.cs-metabox-framework {
   margin: -6px -12px -12px -12px;
 
-  .cs-content{
-    .cs-section-title{
+  .cs-content {
+    .cs-section-title {
       padding: 20px;
     }
   }
 }
 
-.cs-element{
+.cs-element {
   position: relative;
   padding: 30px;
 
-  + .cs-element{
+  + .cs-element {
     border-top: 1px solid #eee;
   }
 
-  p:last-child{
+  p:last-child {
     margin-bottom: 0 !important;
   }
 
   &:after,
-  &:before{
+  &:before {
     content: " ";
     display: table;
   }
 
-  &:after{
+  &:after {
     clear: both;
   }
 
-  h4{
+  h4 {
     margin-top: 0;
   }
 
-  .cs-title{
+  .cs-title {
     position: relative;
     width: 25%;
     float: left;
 
-    h4{
+    h4 {
       margin: 0;
       color: #23282d;
     }
   }
 
-  .cs-fieldset{
+  .cs-fieldset {
     margin-left: 30%;
   }
 
-  pre{
+  pre {
     clear: both;
     color: #ccc;
     background-color: #222;
@@ -320,79 +320,79 @@
     overflow: auto;
     @include border-radius(2px);
 
-    strong{
+    strong {
       color: #ffbc00;
     }
   }
 }
 
-.cs-pseudo-field{
+.cs-pseudo-field {
   padding: 0 5px 0 0 !important;
   border: 0;
   display: inline-block;
 }
 
-.cs-field-text{
-  input{
+.cs-field-text {
+  input {
     width: 340px;
     max-width: 100%;
   }
 }
 
-.cs-field-textarea{
-  textarea{
+.cs-field-textarea {
+  textarea {
     width: 100%;
     max-width: 100%;
     min-height: 125px;
   }
 
-  .cs-shortcode{
+  .cs-shortcode {
     margin-bottom: 10px;
   }
 }
 
-.cs-field-wysiwyg{
-  textarea{
+.cs-field-wysiwyg {
+  textarea {
     width: 100%;
     max-width: 100%;
     min-height: 125px;
   }
 
-  .wp-editor-container{
+  .wp-editor-container {
     clear: none;
   }
 }
 
-.cs-field-number{
-  input{
+.cs-field-number {
+  input {
     width: 70px;
   }
-  em{
+  em {
     margin-left: 5px;
     color: #bbb;
   }
 }
 
-.cs-field-select{
-  select{
+.cs-field-select {
+  select {
     max-width: 100%;
   }
 }
 
-.cs-field-typography{
+.cs-field-typography {
   select,
-  .chosen-container{
+  .chosen-container {
     margin-right: 5px;
   }
 
-  .cs-typo-variant{
+  .cs-typo-variant {
     min-width: 90px;
   }
 }
 
 .cs-field-checkbox,
-.cs-field-radio{
-  ul{
+.cs-field-radio {
+  ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -400,20 +400,20 @@
     max-height: 305px;
   }
 
-  .horizontal li{
+  .horizontal li {
     display: inline-block;
     margin-right: 15px;
     margin-bottom: 15px;
   }
 
-  input[type="radio"]:checked:before{
+  input[type="radio"]:checked:before {
     line-height: 10px;
   }
 }
 
-.cs-field-switcher{
+.cs-field-switcher {
 
-  label{
+  label {
     display: block;
     float: left;
     cursor: pointer;
@@ -425,7 +425,7 @@
     overflow: hidden;
     @include border-radius(20px);
 
-    span{
+    span {
       position: absolute;
       top: 4px;
       left: 4px;
@@ -436,30 +436,30 @@
       @include transition(left 0.15s ease-out);
     }
 
-    input{
+    input {
       position: absolute;
       top: 0;
       left: 0;
       opacity: 0;
 
-      &:checked ~ em{
+      &:checked ~ em {
         background: #4fb845;
       }
 
-      &:checked ~ em:before{
+      &:checked ~ em:before {
         opacity: 0;
       }
 
-      &:checked ~ em:after{
+      &:checked ~ em:after {
         opacity: 1;
       }
 
-      &:checked ~ span{
+      &:checked ~ span {
         left: 40px;
       }
     }
 
-    em{
+    em {
       position: relative;
       display: block;
       height: inherit;
@@ -473,24 +473,24 @@
       @include transition(background 0.15s ease-out);
     }
 
-    em:before, em:after{
+    em:before, em:after {
       position: absolute;
       @include transition(opacity 0.15s ease-out);
     }
 
-    em:before{
+    em:before {
       content: attr(data-off);
       right: 14px;
     }
 
-    em:after{
+    em:after {
       content: attr(data-on);
       left: 14px;
       opacity: 0;
     }
   }
 
-  .cs-text-desc{
+  .cs-text-desc {
     float: left;
     margin-left: 5px;
     margin-top: 0;
@@ -498,13 +498,13 @@
   }
 }
 
-.cs-field-image_select{
+.cs-field-image_select {
 
-  label{
+  label {
     display: inline-block;
     margin: 5px;
 
-    img{
+    img {
       max-width: 100%;
       vertical-align: bottom;
       background-color: #fff;
@@ -514,33 +514,33 @@
     }
   }
 
-  input{
+  input {
     display: none;
 
-    &:checked ~ img{
+    &:checked ~ img {
       border-color: #333;
       @include opacity(1);
     }
   }
 }
 
-.cs-field-upload{
-  input{
+.cs-field-upload {
+  input {
     width: 420px;
     max-width: 100%;
   }
 }
 
-.cs-field-background{
-  .cs-field-color_picker{
+.cs-field-background {
+  .cs-field-color_picker {
     position: relative;
     top: 10px;
   }
 }
 
-.cs-field-color_picker{
+.cs-field-color_picker {
 
-  .cs-alpha-wrap{
+  .cs-alpha-wrap {
     display: none;
     position: relative;
     top: -1px;
@@ -551,13 +551,13 @@
     background-color: #fff;
   }
 
-  .cs-alpha-slider{
+  .cs-alpha-slider {
     position: absolute;
     width: 190px;
     margin-left: 2px;
     height: 18px;
 
-    .ui-slider-handle{
+    .ui-slider-handle {
       position: absolute;
       top: -3px;
       bottom: -3px;
@@ -574,7 +574,7 @@
       @include border-radius(4px);
       @include box-shadow(0 1px 2px rgba(black, 0.2));
 
-      &:before{
+      &:before {
         content: " ";
         position: absolute;
         left: -2px;
@@ -587,7 +587,7 @@
     }
   }
 
-  .cs-alpha-slider-offset{
+  .cs-alpha-slider-offset {
     height: 18px;
     width: 200px;
     background: url(../images/checkerboard.png) repeat-y center left scroll #fff;
@@ -595,7 +595,7 @@
     @include border-radius(2px);
   }
 
-  .cs-alpha-text{
+  .cs-alpha-text {
     position: absolute;
     top: 12px;
     right: 10px;
@@ -607,70 +607,70 @@
   }
 }
 
-.cs-field-backup{
-  textarea{
+.cs-field-backup {
+  textarea {
     width: 100%;
     min-height: 200px;
     margin-bottom: 5px;
   }
 
-  small{
+  small {
     display: inline-block;
     margin: 5px;
   }
 
-  hr{
+  hr {
     margin: 30px 0;
   }
 }
 
-.cs-field-fieldset{
-  .cs-inner{
-    border:1px solid #eee;
+.cs-field-fieldset {
+  .cs-inner {
+    border: 1px solid #eee;
     background-color: #fff;
   }
 
-  .cs-element{
+  .cs-element {
     padding: 20px;
   }
 }
 
-.cs-field-group{
+.cs-field-group {
 
-  .cs-element{
+  .cs-element {
     padding: 20px;
   }
 
-  .cs-group{
+  .cs-group {
     display: none;
     position: relative;
     margin-bottom: 5px;
 
-    h4{
+    h4 {
       font-size: 1em;
     }
   }
 
-  .cs-group-content{
+  .cs-group-content {
     border: 1px solid #e5e5e5;
     background: #fff;
   }
 
-  .cs-group-title{
+  .cs-group-title {
     border: 1px solid #e5e5e5;
     background: #fafafa;
     @include transition(border-color 0.15s);
 
     &:active,
     &:hover,
-    &:focus{
+    &:focus {
       border: 1px solid #bbb;
       background: #fafafa;
       outline: none;
     }
   }
 
-  .cs-group-title{
+  .cs-group-title {
     display: block;
     cursor: pointer;
     position: relative;
@@ -680,24 +680,24 @@
     font-size: 100%;
   }
 
-  .cs-group-content{
+  .cs-group-content {
     padding: 0;
     border-top: 0;
   }
 
-  .widget-placeholder{
+  .widget-placeholder {
     margin-bottom: 8px;
   }
 
-  .ui-accordion .cs-group{
+  .ui-accordion .cs-group {
     display: block;
   }
 
-  .ui-accordion-icons{
+  .ui-accordion-icons {
     padding-left: 30px;
   }
 
-  .ui-accordion-header-icon{
+  .ui-accordion-header-icon {
     position: absolute;
     left: .5em;
     top: 50%;
@@ -706,14 +706,14 @@
     color: #bbb;
   }
 
-  .ui-sortable-helper{
-    .cs-group-content{
+  .ui-sortable-helper {
+    .cs-group-content {
       display: none !important;
     }
   }
 }
 
-.cs-help{
+.cs-help {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -722,14 +722,14 @@
   color: #aaa;
 }
 
-.cs-field-heading{
+.cs-field-heading {
   font-size: 1.5em;
   font-weight: bold;
   color: #23282d;
   background-color: #f5f5f5 !important;
 }
 
-.cs-field-subheading{
+.cs-field-subheading {
   font-size: 14px;
   font-weight: bold;
   padding-top: 17px;
@@ -738,40 +738,40 @@
   background-color: #f7f7f7 !important;
 }
 
-.cs-field-notice{
+.cs-field-notice {
   padding: 0 !important;
   border: 0 !important;
 
-  + .cs-element{
+  + .cs-element {
     border-top: 0;
   }
 
-  .cs-notice{
+  .cs-notice {
     font-size: 12px;
     padding: 17px 30px;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
   }
 
-  .cs-success{
+  .cs-success {
     color: #3c763d;
     border-color: #d6e9c6;
     background-color: #dff0d8;
   }
 
-  .cs-info{
+  .cs-info {
     color: #31708f;
     border-color: #bce8f1;
     background-color: #d9edf7;
   }
 
-  .cs-warning{
+  .cs-warning {
     color: #8a6d3b;
     border-color: #faebcc;
     background-color: #fcf8e3;
   }
 
-  .cs-danger{
+  .cs-danger {
     color: #a94442;
     border-color: #ebccd1;
     background-color: #f2dede;
@@ -779,17 +779,17 @@
 
 }
 
-.cs-field-icon{
+.cs-field-icon {
 
-  input{
+  input {
     display: none;
   }
 
-  .button{
+  .button {
     margin-right: 5px;
   }
 
-  .cs-icon-preview i{
+  .cs-icon-preview i {
     display: inline-block;
     font-size: 14px;
     width: 30px;
@@ -806,13 +806,13 @@
   }
 }
 
-.cs-field-image{
+.cs-field-image {
 
-  input{
+  input {
     display: none;
   }
 
-  .cs-preview{
+  .cs-preview {
     display: inline-block;
     position: relative;
     padding: 4px;
@@ -824,14 +824,14 @@
     @include border-radius(2px);
     @include box-shadow(0 1px 0 rgba(black, 0.08));
 
-    img{
+    img {
       max-height: 90px;
       display: inline-block;
       vertical-align: middle;
     }
   }
 
-  .cs-remove{
+  .cs-remove {
     position: absolute;
     top: 4px;
     right: 4px;
@@ -847,24 +847,24 @@
     @include border-radius(2px);
     @include transition(opacity .2s);
 
-    &:hover{
+    &:hover {
       @include opacity(1);
     }
   }
 }
 
-.cs-field-gallery{
+.cs-field-gallery {
 
-  input{
+  input {
     display: none;
   }
 
-  ul{
+  ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 
-    li{
+    li {
       display: inline-block;
       position: relative;
       padding: 4px;
@@ -874,7 +874,7 @@
       @include border-radius(2px);
       @include box-shadow(0 1px 0 rgba(black, 0.08));
 
-      img{
+      img {
         max-height: 60px;
         display: inline-block;
         vertical-align: middle;
@@ -882,59 +882,59 @@
     }
   }
 
-  .button{
+  .button {
     margin-right: 5px;
     margin-bottom: 5px;
   }
 }
 
-.cs-field-sorter{
+.cs-field-sorter {
 
-  .ui-sortable-placeholder{
+  .ui-sortable-placeholder {
     height: 20px;
     border: 1px dashed #f1c40f;
     background-color: #fffae4;
   }
 
-  .cs-modules{
+  .cs-modules {
     float: left;
     width: 50%;
   }
 
-  .cs-enabled{
+  .cs-enabled {
     margin-right: 15px;
   }
 
   .cs-disabled,
-  .cs-enabled{
+  .cs-enabled {
     padding: 5px 15px;
     border: 1px dashed #ddd;
     background-color: #fff;
   }
 
-  .cs-disabled{
-    li{
+  .cs-disabled {
+    li {
       @include transition(opacity 0.15s);
       @include opacity(0.5);
     }
 
-    .ui-sortable-helper{
+    .ui-sortable-helper {
       @include opacity(1);
     }
   }
 
-  h3{
+  h3 {
     font-size: 14px;
     margin: 0 0 15px 0;
   }
 
-  ul{
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     min-height: 62px;
 
-    li{
+    li {
       margin: 10px 0;
       padding: 10px 15px;
       cursor: move;
@@ -944,35 +944,35 @@
       background-color: #fafafa;
       @include transition(border-color 0.15s);
 
-      &:hover{
+      &:hover {
         border-color: #bbb;
       }
     }
   }
 }
 
-.cs-taxonomy{
+.cs-taxonomy {
   margin: 0;
 
-  > .cs-element{
+  > .cs-element {
     border-top: 0;
   }
 
-  > .cs-field-heading{
+  > .cs-field-heading {
     font-size: 1.1em;
     padding: 20px !important;
     border: 1px solid #ddd;
   }
 
-  > .cs-field-subheading{
+  > .cs-field-subheading {
     font-size: 12px;
     padding: 15px !important;
     border: 1px solid #ddd;
   }
 
-  > .cs-field-notice{
+  > .cs-field-notice {
 
-    .cs-notice{
+    .cs-notice {
       padding: 15px;
       border-left-width: 1px;
       border-left-style: solid;
@@ -982,42 +982,42 @@
   }
 }
 
-.cs-taxonomy-add-fields{
+.cs-taxonomy-add-fields {
 
-  > .cs-element{
+  > .cs-element {
     padding: 8px 0;
     margin: 0 0 10px;
 
-    > .cs-title{
+    > .cs-title {
       float: none;
       width: 100%;
       padding: 2px 2px 4px 0;
 
-      h4{
+      h4 {
         font-size: 12px;
         font-weight: normal;
       }
     }
 
-    > .cs-fieldset{
+    > .cs-fieldset {
       margin-left: 0;
 
-      > .cs-help{
+      > .cs-help {
         right: -5px;
       }
     }
   }
 }
 
-.cs-taxonomy-edit-fields{
+.cs-taxonomy-edit-fields {
 
-  > .cs-element{
+  > .cs-element {
     padding: 20px 0;
 
-    > .cs-title{
+    > .cs-title {
       width: 225px;
 
-      h4{
+      h4 {
         font-size: 14px;
         font-weight: 600;
         line-height: 1.3;
@@ -1026,28 +1026,28 @@
       }
     }
 
-    > .cs-fieldset{
+    > .cs-fieldset {
       margin-left: 225px;
 
-      > .cs-help{
+      > .cs-help {
         top: -5px;
         right: -5px;
       }
     }
   }
 
-  > .cs-field-notice{
+  > .cs-field-notice {
     margin: 20px 0;
   }
 
   > .cs-field-subheading,
-  > .cs-field-heading{
+  > .cs-field-heading {
     margin: 20px 0;
     border: 1px solid #ddd;
   }
 }
 
-.cs-warning-primary{
+.cs-warning-primary {
   color: #fff !important;
   border-color: #d02c21 #ba281e #ba281e !important;
   background: #e14d43 !important;
@@ -1055,63 +1055,63 @@
   @include text-shadow(0 -1px 1px #ba281e, 1px 0 1px #ba281e, 0 1px 1px #ba281e, -1px 0 1px #ba281e !important);
 
   &:hover,
-  &:focus{
+  &:focus {
     border-color: #ba281e !important;
     background: #e35950 !important;
     @include box-shadow(0 1px 0 #ba281e !important);
   }
 
-  &:active{
+  &:active {
     border-color: #ba281e !important;
     background: #d02c21 !important;
     @include box-shadow(inset 0 2px 0 #ba281e !important);
   }
 }
 
-.cs-text-desc{
+.cs-text-desc {
   font-style: italic;
   font-weight: 400;
   margin-top: 10px;
   color: #999;
 }
 
-.cs-text-success{
+.cs-text-success {
   color: #2b542c;
 }
 
-.cs-text-info{
+.cs-text-info {
   color: #31708f;
 }
 
-.cs-text-warning{
+.cs-text-warning {
   color: #d02c21;
 }
 
-.cs-text-muted{
+.cs-text-muted {
   color: #aaa;
 }
 
-.cs-text-left{
+.cs-text-left {
   text-align: left;
 }
 
-.cs-text-center{
+.cs-text-center {
   text-align: center;
 }
 
-.cs-text-right{
+.cs-text-right {
   text-align: right;
 }
 
-.cs-block-left{
+.cs-block-left {
   float: left;
 }
 
-.cs-block-right{
+.cs-block-right {
   float: right;
 }
 
-.cs-text-highlight{
+.cs-text-highlight {
   padding: 2px 4px;
   font-size: 90%;
   color: #c7254e;
@@ -1119,14 +1119,14 @@
   @include border-radius(2px);
 }
 
-.cs-text-highlight-gray{
+.cs-text-highlight-gray {
   padding: 2px 4px;
   font-size: 90%;
   background-color: #f0f0f0;
   @include border-radius(2px);
 }
 
-#cs-save-ajax{
+#cs-save-ajax {
   display: none;
   position: relative;
   top: 4px;
@@ -1138,7 +1138,7 @@
   @include border-radius(2px);
 }
 
-.cs-tooltip{
+.cs-tooltip {
   position: absolute;
   z-index: 100103;
   display: block;
@@ -1148,12 +1148,12 @@
   @include opacity(0);
   @include transition(opacity .15s linear);
 
-  &.in{
+  &.in {
     @include opacity(1);
   }
 }
 
-.cs-tooltip-inner{
+.cs-tooltip-inner {
   max-width: 200px;
   padding: 6px 12px;
   color: #fff;
@@ -1164,29 +1164,29 @@
   @include border-radius(4px);
 }
 
-.cs-dialog{
+.cs-dialog {
   display: none;
   padding: 0;
 
-  .cs-dialog-header{
+  .cs-dialog-header {
     width: 100%;
     padding: 16px 0;
     background-color: #f5f5f5;
     border-bottom: 1px solid #eee;
 
     select,
-    .chosen-container{
+    .chosen-container {
       display: block;
       margin: 0 auto;
       width: 250px !important;
     }
   }
 
-  .cs-element{
+  .cs-element {
     padding: 15px 30px 15px 15px;
   }
 
-  .cs-insert-button{
+  .cs-insert-button {
     text-align: center;
     width: 100%;
     padding: 16px 0;
@@ -1194,23 +1194,23 @@
     border-top: 1px solid #eee;
   }
 
-  .cs-dialog-load{
+  .cs-dialog-load {
     min-height: 250px;
     overflow: hidden;
     overflow-y: auto;
   }
 
-  .cs-clone-button{
+  .cs-clone-button {
     margin: 10px 0;
     text-align: center;
   }
 
-  .cs-shortcode-clone{
+  .cs-shortcode-clone {
     position: relative;
     border-top: 1px dashed #5cb85c;
 
-    .cs-remove-clone{
-      display:none;
+    .cs-remove-clone {
+      display: none;
       position: absolute;
       right: 5px;
       top: 5px;
@@ -1219,25 +1219,25 @@
       color: #ed6f6f;
       font-size: 14px;
 
-      &:hover{
+      &:hover {
         text-decoration: none;
-        color: darken( #ed6f6f, 10% );
+        color: darken(#ed6f6f, 10%);
       }
     }
   }
 
-  a{
+  a {
     &:active,
-    &:focus{
+    &:focus {
       outline: none;
       @include box-shadow(none);
     }
   }
 
-  h4{
+  h4 {
     font-size: 13px;
 
-    small{
+    small {
       font-style: italic;
       font-weight: 400;
       color: #aaa;
@@ -1246,20 +1246,20 @@
 
 }
 
-#cs-icon-dialog{
+#cs-icon-dialog {
 
-  .cs-icon-search{
+  .cs-icon-search {
     width: 250px;
     height: 40px;
     line-height: 40px;
   }
 
-  a{
+  a {
     display: inline-block;
     padding: 5px;
     cursor: pointer;
 
-    .cs-icon{
+    .cs-icon {
       position: relative;
       padding: 5px;
       display: inline-block;
@@ -1276,20 +1276,20 @@
       @include box-shadow(0 1px 0 rgba(black, 0.08));
     }
 
-    &:hover .cs-icon{
+    &:hover .cs-icon {
       color: #fff;
       border-color: #222;
       background-color: #222;
     }
   }
 
-  .cs-icon-loading{
+  .cs-icon-loading {
     color: #999;
     text-align: center;
     margin-top: 10px;
   }
 
-  .cs-icon-title{
+  .cs-icon-title {
     padding: 15px;
     margin: 10px 0;
     text-align: center;
@@ -1298,7 +1298,7 @@
     border-bottom: 1px solid #eee;
     background-color: #fafafa;
 
-    &:first-child{
+    &:first-child {
       margin-top: 0;
       border-top: 0;
     }
@@ -1306,210 +1306,210 @@
 }
 
 .cs-shortcode-scrolling,
-.cs-icon-scrolling{
+.cs-icon-scrolling {
   overflow: hidden;
   height: 100%;
 
-  .wp-full-overlay{
+  .wp-full-overlay {
     z-index: 1;
   }
 }
 
-#side-sortables{
-  .cs-content .cs-section-title{
+#side-sortables {
+  .cs-content .cs-section-title {
     padding: 12px;
   }
 
-  .cs-element{
+  .cs-element {
     padding: 12px;
 
-    .cs-title{
+    .cs-title {
       float: none;
       width: 100%;
       margin-bottom: 10px;
     }
 
-    .cs-fieldset{
+    .cs-fieldset {
       margin-left: 0;
     }
   }
 
-  .cs-field-upload input{
+  .cs-field-upload input {
     width: 185px;
   }
 
-  .cs-field-notice .cs-notice{
+  .cs-field-notice .cs-notice {
     padding: 12px;
   }
 }
 
-.widget-content{
-  .cs-element{
+.widget-content {
+  .cs-element {
     position: relative;
     top: -1px;
     margin-right: -15px;
     margin-left: -15px;
     padding: 12px 15px;
 
-    &:last-child{
+    &:last-child {
       margin-bottom: 15px;
     }
 
-    .cs-title{
+    .cs-title {
       float: none;
       width: 100%;
       margin-bottom: 5px;
     }
 
-    .cs-fieldset{
+    .cs-fieldset {
       margin-left: 0;
     }
   }
 
-  .cs-field-text input{
+  .cs-field-text input {
     width: 100%;
   }
 
-  .cs-field-upload input{
+  .cs-field-upload input {
     width: 330px;
   }
 
-  .cs-field-notice .cs-notice{
+  .cs-field-notice .cs-notice {
     padding: 15px;
   }
 }
 
-#customize-controls{
+#customize-controls {
 
-  .customize-control-cs_field{
+  .customize-control-cs_field {
     position: relative;
     top: -10px;
     margin-bottom: 0;
 
-    .chosen-container{
-      &.chosen-with-drop .chosen-drop{
+    .chosen-container {
+      &.chosen-with-drop .chosen-drop {
         position: relative;
       }
     }
   }
 
-  .cs-element{
+  .cs-element {
     margin-right: -15px;
     margin-left: -15px;
     padding: 12px 15px;
 
-    .cs-title{
+    .cs-title {
       float: none;
       width: 100%;
       margin-bottom: 10px;
 
-      h4{
+      h4 {
         font-size: 14px;
         font-weight: 600;
         color: inherit;
       }
     }
 
-    .cs-fieldset{
+    .cs-fieldset {
       margin-left: 0;
     }
   }
 
-  .widget-content{
-    .cs-element{
+  .widget-content {
+    .cs-element {
       margin-right: -10px;
       margin-left: -10px;
       padding: 10px 12px;
     }
   }
 
-  .cs-field-select select{
+  .cs-field-select select {
     width: 100%;
   }
 
-  .cs-field-upload input{
+  .cs-field-upload input {
     width: 175px;
     margin-right: 5px;
   }
 
-  .cs-field-heading{
+  .cs-field-heading {
     color: inherit;
     font-size: 14px;
     line-height: 1em;
   }
 
-  .cs-field-subheading{
+  .cs-field-subheading {
     color: inherit;
     font-size: 11px;
   }
 
-  .cs-text-desc{
+  .cs-text-desc {
     margin-top: 4px;
     font-size: 12px;
   }
 
   .cs-field-content,
-  .cs-field-notice .cs-notice{
+  .cs-field-notice .cs-notice {
     padding: 15px;
   }
 }
 
-@media only screen and (max-width:1200px){
-  .cs-metabox-framework{
-    .cs-element{
+@media only screen and (max-width: 1200px) {
+  .cs-metabox-framework {
+    .cs-element {
 
-      .cs-title{
+      .cs-title {
         float: none;
         width: 100%;
         margin-bottom: 10px;
       }
 
-      .cs-fieldset{
+      .cs-fieldset {
         margin-left: 0;
       }
     }
   }
 }
 
-@media only screen and (max-width:782px){
-  .cs-framework{
-    .cs-header{
+@media only screen and (max-width: 782px) {
+  .cs-framework {
+    .cs-header {
       text-align: center;
 
-      h1{
+      h1 {
         width: 100%;
         margin-bottom: 10px;
       }
 
-      fieldset{
+      fieldset {
         float: none;
       }
     }
 
     .cs-expand-all,
     .cs-nav-background,
-    .cs-nav{
+    .cs-nav {
       display: none;
     }
 
-    .cs-content{
+    .cs-content {
       margin-left: 0;
     }
 
     .cs-section-title,
-    .cs-section{
+    .cs-section {
       display: block !important;
     }
 
-    .cs-element{
+    .cs-element {
 
-      .cs-title{
+      .cs-title {
         float: none;
         width: 100%;
         margin-bottom: 10px;
       }
 
-      .cs-fieldset{
+      .cs-fieldset {
         margin-left: 0;
       }
     }
