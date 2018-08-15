@@ -3,15 +3,15 @@
  *
  * ------------------------------------------------------------------------------------------------
  *
- * Codestar Framework
+ * Codestar+ Framework
  * A Lightweight and easy-to-use WordPress Options Framework
  *
- * Plugin Name: Codestar Framework
- * Plugin URI: http://codestarframework.com/
+ * Plugin Name: Codestar+ Framework
+ * Plugin URI: http://codestarplus.hasin.me/
  * Author: Codestar
- * Author URI: http://codestarthemes.com/
+ * Author URI: http://hasin.me/
  * Version: 1.0.2
- * Description: A Lightweight and easy-to-use WordPress Options Framework
+ * Description: An improved option and metabox framework for WordPress
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain: cs-framework
@@ -35,6 +35,11 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  *
  * ------------------------------------------------------------------------------------------------
+ * Codestar+ is an improved version of original Codestar with many fixes that
+ * the original author didn't pull for some unknown reason. Since the progress is slow
+ * in the original codestar repository, I decided to fork it and push fixes and feature updates regularly.
+ *
+ * Codestar+ is developed and maintained by Hasin Hayder
  *
  */
 
