@@ -27,7 +27,7 @@ class CSFramework_Option_image_select extends CSFramework_Options {
         if ( isset( $this->field['options'] ) ) {
             $options = $this->field['options'];
             foreach ( $options as $key => $value ) {
-                echo '<label><input type="' . $input_type . '" name="' . $this->element_name( $input_attr ) . '" value="' . $key . '"' . $this->element_class() . $this->element_attributes( $key ) . $this->checked( $this->element_value(), $key ) . '/><img src="' . $value . '" alt="' . $key . '" /></label>';
+                echo '<label><input type="' . esc_attr( $input_type ) . '" name="' . esc_attr( $this->element_name( $input_attr ) ) . '" value="' . esc_attr( $key ) . '"' . $this->element_class() . $this->element_attributes( $key ) . $this->checked( $this->element_value(), $key ) . '/><img src="' . esc_url( $value ) . '" alt="' . esc_attr( $key ) . '" /></label>';
             }
         }
 

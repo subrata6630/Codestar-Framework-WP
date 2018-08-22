@@ -35,9 +35,9 @@ class CSFramework_Option_group extends CSFramework_Options {
 
         }
 
-        echo '<div class="cs-group cs-group-' . $el_class . '-adding hidden">';
+        echo '<div class="cs-group cs-group-' . esc_attr( $el_class ) . '-adding hidden">';
 
-        echo '<h4 class="cs-group-title">' . $acc_title . '</h4>';
+        echo '<h4 class="cs-group-title">' . wp_kses_post( $acc_title ) . '</h4>';
         echo '<div class="cs-group-content">';
         foreach ( $fields as $field ) {
             $field['sub']  = true;
@@ -66,8 +66,8 @@ class CSFramework_Option_group extends CSFramework_Options {
 
                 $field_title = ( ! empty( $search_id ) ) ? $acc_title : $field_title;
 
-                echo '<div class="cs-group cs-group-' . $el_class . '-' . ( $key + 1 ) . '">';
-                echo '<h4 class="cs-group-title">' . $field_title . ': ' . $title . '</h4>';
+                echo '<div class="cs-group cs-group-' . esc_attr( $el_class ) . '-' . ( $key + 1 ) . '">';
+                echo '<h4 class="cs-group-title">' . wp_kses_post( $field_title ) . ': ' . wp_kses_post( $title ) . '</h4>';
                 echo '<div class="cs-group-content">';
 
                 foreach ( $fields as $field ) {
@@ -87,7 +87,7 @@ class CSFramework_Option_group extends CSFramework_Options {
 
         echo '</div>';
 
-        echo '<a href="#" class="button button-primary cs-add-group">' . $this->field['button_title'] . '</a>';
+        echo '<a href="#" class="button button-primary cs-add-group">' . wp_kses_post( $this->field['button_title'] ) . '</a>';
 
         echo wp_kses_post( $this->element_after() );
 

@@ -69,19 +69,19 @@ class CSFramework_Option_typography extends CSFramework_Options {
             $is_google = ( array_key_exists( $family_value, $googlefonts ) ) ? true : false;
 
             echo '<label class="cs-typography-family">';
-            echo '<select name="' . $this->element_name( '[family]' ) . '" class="' . $is_chosen . $chosen_rtl . 'cs-typo-family" data-atts="family"' . $this->element_attributes() . '>';
+            echo '<select name="' . esc_attr( $this->element_name( '[family]' ) ) . '" class="' . esc_attr( $is_chosen . $chosen_rtl ) . 'cs-typo-family" data-atts="family"' . $this->element_attributes() . '>';
 
             do_action( 'cs_typography_family', $family_value, $this );
 
             echo '<optgroup label="' . esc_html__( 'Web Safe Fonts', 'cs-framework' ) . '">';
             foreach ( $websafe_fonts as $websafe_value ) {
-                echo '<option value="' . $websafe_value . '" data-variants="' . implode( '|', $default_variants ) . '" data-type="websafe"' . selected( $websafe_value, $family_value, true ) . '>' . $websafe_value . '</option>';
+                echo '<option value="' . esc_attr( $websafe_value ) . '" data-variants="' . esc_attr( implode( '|', $default_variants ) ) . '" data-type="websafe"' . esc_attr( selected( $websafe_value, $family_value, true ) ) . '>' . wp_kses_post( $websafe_value ) . '</option>';
             }
             echo '</optgroup>';
 
             echo '<optgroup label="' . esc_html__( 'Google Fonts', 'cs-framework' ) . '">';
             foreach ( $googlefonts as $google_key => $google_value ) {
-                echo '<option value="' . $google_key . '" data-variants="' . implode( '|', $google_value ) . '" data-type="google"' . selected( $google_key, $family_value, true ) . '>' . $google_key . '</option>';
+                echo '<option value="' . esc_attr( $google_key ) . '" data-variants="' . esc_attr( implode( '|', $google_value ) ) . '" data-type="google"' . esc_attr( selected( $google_key, $family_value, true ) ) . '>' . wp_kses_post( $google_key ) . '</option>';
             }
             echo '</optgroup>';
 
@@ -94,16 +94,16 @@ class CSFramework_Option_typography extends CSFramework_Options {
                 $variants = ( $value['font'] === 'google' || $value['font'] === 'websafe' ) ? $variants : array( 'regular' );
 
                 echo '<label class="cs-typography-variant">';
-                echo '<select name="' . $this->element_name( '[variant]' ) . '" class="' . $is_chosen . $chosen_rtl . 'cs-typo-variant" data-atts="variant">';
+                echo '<select name="' . esc_attr( $this->element_name( '[variant]' ) ) . '" class="' . esc_attr( $is_chosen . $chosen_rtl ) . 'cs-typo-variant" data-atts="variant">';
                 foreach ( $variants as $variant ) {
-                    echo '<option value="' . $variant . '"' . $this->checked( $variant_value, $variant, 'selected' ) . '>' . $variant . '</option>';
+                    echo '<option value="' . esc_attr( $variant ) . '"' . $this->checked( $variant_value, $variant, 'selected' ) . '>' . wp_kses_post( $variant ) . '</option>';
                 }
                 echo '</select>';
                 echo '</label>';
 
             }
 
-            echo '<input type="text" name="' . $this->element_name( '[font]' ) . '" class="cs-typo-font hidden" data-atts="font" value="' . $value['font'] . '" />';
+            echo '<input type="text" name="' . esc_attr( $this->element_name( '[font]' ) ) . '" class="cs-typo-font hidden" data-atts="font" value="' . esc_attr( $value['font'] ) . '" />';
 
         } else {
 

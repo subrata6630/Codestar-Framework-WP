@@ -24,10 +24,10 @@ if ( ! function_exists( 'cs_get_icons' ) ) {
 
                 if ( is_object( $object ) ) {
 
-                    echo ( count( $jsons ) >= 2 ) ? '<h4 class="cs-icon-title">' . $object->name . '</h4>' : '';
+                    echo ( count( $jsons ) >= 2 ) ? '<h4 class="cs-icon-title">' . wp_kses_post( $object->name ) . '</h4>' : '';
 
                     foreach ( $object->icons as $icon ) {
-                        echo '<a class="cs-icon-tooltip" data-cs-icon="' . $icon . '" data-title="' . $icon . '"><span class="cs-icon cs-selector"><i class="' . $icon . '"></i></span></a>';
+                        echo '<a class="cs-icon-tooltip" data-cs-icon="' . esc_attr( $icon ) . '" data-title="' . esc_attr( $icon ) . '"><span class="cs-icon cs-selector"><i class="' . esc_attr( $icon ) . '"></i></span></a>';
                     }
 
                 } else {

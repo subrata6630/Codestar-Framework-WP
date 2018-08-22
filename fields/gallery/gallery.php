@@ -34,16 +34,16 @@ class CSFramework_Option_Gallery extends CSFramework_Options {
 
             foreach ( $values as $id ) {
                 $attachment = wp_get_attachment_image_src( $id, 'thumbnail' );
-                echo '<li><img src="' . $attachment[0] . '" alt="" /></li>';
+                echo '<li><img src="' . esc_url( $attachment[0] ) . '" alt="" /></li>';
             }
 
         }
 
         echo '</ul>';
-        echo '<a href="#" class="button button-primary cs-add">' . $add . '</a>';
-        echo '<a href="#" class="button cs-edit' . $hidden . '">' . $edit . '</a>';
-        echo '<a href="#" class="button cs-warning-primary cs-remove' . $hidden . '">' . $clear . '</a>';
-        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . $value . '"' . $this->element_class() . $this->element_attributes() . '/>';
+        echo '<a href="#" class="button button-primary cs-add">' . wp_kses_post( $add ) . '</a>';
+        echo '<a href="#" class="button cs-edit' . esc_attr( $hidden ) . '">' . wp_kses_post( $edit ) . '</a>';
+        echo '<a href="#" class="button cs-warning-primary cs-remove' . esc_attr( $hidden ) . '">' . wp_kses_post( $clear ) . '</a>';
+        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . esc_attr($value) . '"' . $this->element_class() . $this->element_attributes() . '/>';
 
         echo wp_kses_post( $this->element_after() );
 

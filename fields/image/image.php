@@ -30,9 +30,9 @@ class CSFramework_Option_Image extends CSFramework_Options {
             $preview    = $attachment[0];
         }
 
-        echo '<div class="cs-image-preview' . $hidden . '"><div class="cs-preview"><i class="fa fa-times cs-remove"></i><img src="' . $preview . '" alt="preview" /></div></div>';
+        echo '<div class="cs-image-preview' . esc_attr( $hidden ) . '"><div class="cs-preview"><i class="fa fa-times cs-remove"></i><img src="' . esc_url( $preview ) . '" alt="preview" /></div></div>';
         echo '<a href="#" class="button button-primary cs-add">' . $add . '</a>';
-        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . $this->element_value() . '"' . $this->element_class() . $this->element_attributes() . '/>';
+        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . esc_attr($this->element_value()) . '"' . $this->element_class() . $this->element_attributes() . '/>';
 
         echo wp_kses_post( $this->element_after() );
 

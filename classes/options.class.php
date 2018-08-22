@@ -343,7 +343,7 @@ abstract class CSFramework_Options extends CSFramework_Abstract {
         }
 
         if ( $echo ) {
-            echo wp_kses_post( $result );
+            echo esc_attr( $result );
         }
 
         return $result;

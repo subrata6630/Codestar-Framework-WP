@@ -19,7 +19,7 @@ class CSFramework_Option_color_picker extends CSFramework_Options {
     public function output() {
 
         echo wp_kses_post( $this->element_before() );
-        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . $this->element_value() . '"' . $this->element_class( 'cs-field-color-picker' ) . $this->element_attributes( $this->extra_attributes() ) . '/>';
+        echo '<input type="text" name="' . esc_attr( $this->element_name() ) . '" value="' . esc_attr($this->element_value()) . '"' . ec_attr($this->element_class( 'cs-field-color-picker' )) . esc_attr($this->element_attributes( $this->extra_attributes() )) . '/>';
         echo wp_kses_post( $this->element_after() );
 
     }

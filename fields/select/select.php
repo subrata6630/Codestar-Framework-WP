@@ -28,13 +28,13 @@ class CSFramework_Option_select extends CSFramework_Options {
             $extra_name = ( isset( $this->field['attributes']['multiple'] ) ) ? '[]' : '';
             $chosen_rtl = ( is_rtl() && strpos( $class, 'chosen' ) ) ? 'chosen-rtl' : '';
 
-            echo '<select name="' . $this->element_name( $extra_name ) . '"' . $this->element_class( $chosen_rtl ) . $this->element_attributes() . '>';
+            echo '<select name="' . esc_attr( $this->element_name( $extra_name ) ) . '"' . $this->element_class( $chosen_rtl ) . $this->element_attributes() . '>';
 
-            echo ( isset( $this->field['default_option'] ) ) ? '<option value="">' . $this->field['default_option'] . '</option>' : '';
+            echo ( isset( $this->field['default_option'] ) ) ? '<option value="">' . wp_kses_post( $this->field['default_option'] ) . '</option>' : '';
 
             if ( ! empty( $options ) ) {
                 foreach ( $options as $key => $value ) {
-                    echo '<option value="' . $key . '" ' . $this->checked( $this->element_value(), $key, 'selected' ) . '>' . $value . '</option>';
+                    echo '<option value="' . esc_attr( $key ) . '" ' . $this->checked( $this->element_value(), $key, 'selected' ) . '>' . wp_kses_post( $value ) . '</option>';
                 }
             }
 
